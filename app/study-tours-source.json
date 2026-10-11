@@ -1,0 +1,66 @@
+[
+  {
+    "id": "source-lumbar-disc",
+    "title": "Krążek z atlasu źródłowego",
+    "subtitle": "L4–L5 · powierzchnia i wnętrze",
+    "steps": [
+      {
+        "conceptId": "ZS:ZS0461",
+        "title": "Krążek L4–L5",
+        "note": "Oryginalna powierzchnia krążka z Z-Anatomy. Obejmuje jego zewnętrzny zarys; jądro znajduje się wewnątrz.",
+        "systems": [
+          "skeletal",
+          "connective"
+        ],
+        "view": "top"
+      },
+      {
+        "conceptId": "ZS:ZS0516",
+        "title": "Jądro miażdżyste",
+        "note": "Wybrany model wnętrza krążka. Wygaszenie otoczenia pozwala obejrzeć jego położenie w oryginalnym zbiorze.",
+        "systems": [
+          "skeletal",
+          "connective"
+        ],
+        "view": "top"
+      }
+    ]
+  },
+  {
+    "id": "source-knee-capsule",
+    "title": "Torebka i kaletki kolana",
+    "subtitle": "Nowe struktury z pełnego atlasu",
+    "steps": [
+      {
+        "conceptId": "ZS:ZS0316",
+        "title": "Torebka stawu kolanowego",
+        "note": "Torebka otacza staw. To źródłowa siatka, a nie elipsoida dodana przez aplikację.",
+        "systems": [
+          "skeletal",
+          "connective"
+        ],
+        "view": "front"
+      },
+      {
+        "conceptId": "ZS:ZS1217",
+        "title": "Kaletka podskórna przedrzepkowa",
+        "note": "Źródło wyróżnia kilka kaletek przed rzepką. Wybrana podskórna kaletka leży powierzchownie.",
+        "systems": [
+          "skeletal",
+          "connective"
+        ],
+        "view": "front"
+      },
+      {
+        "conceptId": "ZS:ZS1223",
+        "title": "Kaletka podpowięziowa przedrzepkowa",
+        "note": "Oddzielny model kaletki podpowięziowej uzupełnia rozróżnienie struktur przed rzepką.",
+        "systems": [
+          "skeletal",
+          "connective"
+        ],
+        "view": "front"
+      }
+    ]
+  }
+]

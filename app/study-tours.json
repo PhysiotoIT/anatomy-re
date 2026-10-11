@@ -1,0 +1,52 @@
+[
+  {
+    "id": "circulation",
+    "title": "Droga krwi",
+    "subtitle": "Od serca do głównej tętnicy",
+    "steps": [
+      {"conceptId": "FMA7088", "title": "Serce", "note": "Zobacz serce w położeniu między płucami. Model zawiera wiele osobnych siatek, dlatego możesz przejść od całego narządu do jego części.", "systems": ["cardiac", "arterial", "venous", "respiratory"], "view": "front"},
+      {"conceptId": "FMA7101", "title": "Lewa komora", "note": "Lewa komora tłoczy krew do krążenia ogólnego. Przyjrzyj się jej położeniu względem pozostałych części serca.", "systems": ["cardiac", "arterial"], "view": "front"},
+      {"conceptId": "FMA3734", "title": "Aorta", "note": "Aorta odprowadza krew z lewej komory. Obróć model, aby prześledzić jej przebieg od klatki piersiowej ku jamie brzusznej.", "systems": ["cardiac", "arterial"], "view": "front"}
+    ]
+  },
+  {
+    "id": "nervous",
+    "title": "Oś układu nerwowego",
+    "subtitle": "Mózg, móżdżek i rdzeń",
+    "steps": [
+      {"conceptId": "FMA50801", "title": "Mózg", "note": "Zobacz położenie mózgu w czaszce. Osobne siatki reprezentują wybrane składowe tej struktury.", "systems": ["nervous", "skeletal"], "view": "side"},
+      {"conceptId": "FMA67944", "title": "Móżdżek", "note": "Móżdżek leży z tyłu i poniżej półkul mózgu. Obróć model, aby ocenić jego położenie przestrzenne.", "systems": ["nervous", "skeletal"], "view": "side"},
+      {"conceptId": "FMA7647", "title": "Rdzeń kręgowy", "note": "Rdzeń przebiega w kanale kręgowym i łączy struktury mózgowia z drogami nerwowymi tułowia.", "systems": ["nervous", "skeletal"], "view": "back"}
+    ]
+  },
+  {
+    "id": "movement",
+    "title": "Mechanika kolana",
+    "subtitle": "Kość, mięsień i rzepka",
+    "steps": [
+      {"conceptId": "FMA9611", "title": "Kość udowa", "note": "Kość udowa tworzy górną część stawu kolanowego. Obejrzyj jej dystalny koniec i relację z rzepką.", "systems": ["skeletal", "muscular", "connective"], "view": "front"},
+      {"conceptId": "FMA22430", "title": "Mięsień prosty uda", "note": "To jedna z części mięśnia czworogłowego uda. W tym widoku można ocenić jego przebieg nad przednią stroną uda.", "systems": ["skeletal", "muscular", "connective"], "view": "front"},
+      {"conceptId": "FMA24485", "title": "Rzepka", "note": "Rzepka leży przed stawem kolanowym i współpracuje z aparatem wyprostnym kolana. Model nie przedstawia ruchu ani sił biomechanicznych.", "systems": ["skeletal", "muscular", "connective"], "view": "front"}
+    ]
+  },
+  {
+    "id": "knee_stability",
+    "title": "Stabilność kolana",
+    "subtitle": "Więzadło krzyżowe, łąkotka i więzadło poboczne",
+    "steps": [
+      {"conceptId": "ZA:right_anterior_cruciate_ligament", "title": "Więzadło krzyżowe przednie", "note": "Leży wewnątrz stawu kolanowego. Ogranicza przesuwanie piszczeli do przodu względem kości udowej i wspiera kontrolę rotacji.", "systems": ["skeletal", "connective"], "view": "side"},
+      {"conceptId": "ZA:right_medial_meniscus", "title": "Łąkotka przyśrodkowa", "note": "Ta struktura chrzęstno-włóknista znajduje się między kością udową a piszczelową po przyśrodkowej stronie stawu. Pomaga rozkładać obciążenia.", "systems": ["skeletal", "connective"], "view": "front"},
+      {"conceptId": "ZA:right_fibular_collateral_ligament", "title": "Więzadło poboczne strzałkowe", "note": "Leży po bocznej stronie kolana i wspiera jego stabilność. Obróć model, by zobaczyć relację do kości strzałkowej.", "systems": ["skeletal", "connective"], "view": "side"}
+    ]
+  },
+  {
+    "id": "disk_anatomy",
+    "title": "Wnętrze krążka L4–L5",
+    "subtitle": "Modele edukacyjne z Blendera",
+    "steps": [
+      {"conceptId": "AR:L4_L5_disk_internal", "title": "Budowa krążka", "note": "Model edukacyjny pokazuje dwie części krążka: zewnętrzny pierścień włóknisty i wewnętrzne jądro miażdżyste. Kształt jest uproszczony na podstawie ilustracji OpenStax i obrysu krążka BodyParts3D.", "systems": ["skeletal", "connective"], "view": "top"},
+      {"conceptId": "AR:annulus_fibrosus_L4_L5", "title": "Pierścień włóknisty", "note": "Pierścień otacza jądro. Oryginalna ilustracja pokazuje jego warstwową budowę; model przedstawia uproszczoną osłonę bez poszczególnych blaszek i włókien.", "systems": ["skeletal", "connective"], "view": "top"},
+      {"conceptId": "AR:nucleus_pulposus_L4_L5", "title": "Jądro miażdżyste", "note": "Jądro jest wewnętrzną częścią krążka. Ta elipsoida ilustruje relację do pierścienia; nie przedstawia geometrii konkretnej osoby ani zmian chorobowych.", "systems": ["skeletal", "connective"], "view": "top"}
+    ]
+  }
+]

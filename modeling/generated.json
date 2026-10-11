@@ -1,0 +1,285 @@
+{
+  "parts": [
+    {
+      "id": "AR001",
+      "name": "annulus fibrosus of L4-L5 intervertebral disk (schematic)",
+      "conceptId": "AR:annulus_fibrosus_L4_L5",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#7ab5c9",
+      "references": [
+        "openstax-716",
+        "bodyparts3d-FJ3216"
+      ],
+      "replaces": [
+        "FJ3216"
+      ],
+      "chunk": 0,
+      "positions": 0,
+      "normals": 577536,
+      "indices": 866304,
+      "vertexCount": 48128,
+      "indexCount": 288768,
+      "bounds": [
+        [
+          -0.025323547422885895,
+          1.007841944694519,
+          -0.03421509638428688
+        ],
+        [
+          0.02393144741654396,
+          1.0318931341171265,
+          0.00297250016592443
+        ]
+      ]
+    },
+    {
+      "id": "AR002",
+      "name": "nucleus pulposus of L4-L5 intervertebral disk (schematic)",
+      "conceptId": "AR:nucleus_pulposus_L4_L5",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#33809e",
+      "references": [
+        "openstax-716",
+        "bodyparts3d-FJ3216"
+      ],
+      "replaces": [
+        "FJ3216"
+      ],
+      "chunk": 0,
+      "positions": 2021376,
+      "normals": 2166552,
+      "indices": 2239140,
+      "vertexCount": 12098,
+      "indexCount": 72576,
+      "bounds": [
+        [
+          -0.011748516000807285,
+          1.0150704383850098,
+          -0.025789443403482437
+        ],
+        [
+          0.010356415994465351,
+          1.0265858173370361,
+          -0.009967582300305367
+        ]
+      ]
+    },
+    {
+      "id": "AR003",
+      "name": "right patellar ligament (schematic)",
+      "conceptId": "AR:right_patellar_ligament",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#ded4a8",
+      "references": [
+        "openstax-917",
+        "FJ3381",
+        "FJ3387"
+      ],
+      "replaces": [],
+      "chunk": 0,
+      "positions": 2529444,
+      "normals": 2641188,
+      "indices": 2697060,
+      "vertexCount": 9312,
+      "indexCount": 55860,
+      "bounds": [
+        [
+          -0.09958803653717041,
+          0.4036802649497986,
+          0.007277956698089838
+        ],
+        [
+          -0.07725967466831207,
+          0.4401339888572693,
+          0.013396993279457092
+        ]
+      ]
+    },
+    {
+      "id": "AR005",
+      "name": "right prepatellar bursa (schematic)",
+      "conceptId": "AR:right_prepatellar_bursa",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#73bfcc",
+      "references": [
+        "openstax-908",
+        "openstax-917",
+        "FJ3381"
+      ],
+      "replaces": [],
+      "chunk": 0,
+      "positions": 2920500,
+      "normals": 3065676,
+      "indices": 3138264,
+      "vertexCount": 12098,
+      "indexCount": 72576,
+      "bounds": [
+        [
+          -0.09645459055900574,
+          0.44392129778862,
+          0.02322699874639511
+        ],
+        [
+          -0.0664542093873024,
+          0.47458308935165405,
+          0.02582699991762638
+        ]
+      ]
+    },
+    {
+      "id": "AR004",
+      "name": "left patellar ligament (schematic)",
+      "conceptId": "AR:left_patellar_ligament",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#ded4a8",
+      "references": [
+        "openstax-917",
+        "FJ3275",
+        "FJ3282"
+      ],
+      "replaces": [],
+      "chunk": 0,
+      "positions": 3428568,
+      "normals": 3540312,
+      "indices": 3596184,
+      "vertexCount": 9312,
+      "indexCount": 55860,
+      "bounds": [
+        [
+          0.07556582987308502,
+          0.4070723056793213,
+          0.008071191608905792
+        ],
+        [
+          0.09734566509723663,
+          0.44062843918800354,
+          0.014395632781088352
+        ]
+      ]
+    },
+    {
+      "id": "AR006",
+      "name": "left prepatellar bursa (schematic)",
+      "conceptId": "AR:left_prepatellar_bursa",
+      "system": "connective",
+      "source": "Anatomy RE \u00b7 Blender",
+      "fidelity": "schematic",
+      "reviewStatus": "unreviewed",
+      "license": "CC BY 4.0",
+      "color": "#73bfcc",
+      "references": [
+        "openstax-908",
+        "openstax-917",
+        "FJ3275"
+      ],
+      "replaces": [],
+      "chunk": 0,
+      "positions": 3819624,
+      "normals": 3964800,
+      "indices": 4037388,
+      "vertexCount": 12098,
+      "indexCount": 72576,
+      "bounds": [
+        [
+          0.06642090529203415,
+          0.44392743706703186,
+          0.023250998929142952
+        ],
+        [
+          0.0963955894112587,
+          0.47455495595932007,
+          0.025851000100374222
+        ]
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "AR:annulus_fibrosus_L4_L5",
+      "name": "annulus fibrosus of L4-L5 intervertebral disk (schematic)",
+      "elements": [
+        "AR001"
+      ]
+    },
+    {
+      "id": "AR:nucleus_pulposus_L4_L5",
+      "name": "nucleus pulposus of L4-L5 intervertebral disk (schematic)",
+      "elements": [
+        "AR002"
+      ]
+    },
+    {
+      "id": "AR:right_patellar_ligament",
+      "name": "right patellar ligament (schematic)",
+      "elements": [
+        "AR003"
+      ]
+    },
+    {
+      "id": "AR:right_prepatellar_bursa",
+      "name": "right prepatellar bursa (schematic)",
+      "elements": [
+        "AR005"
+      ]
+    },
+    {
+      "id": "AR:left_patellar_ligament",
+      "name": "left patellar ligament (schematic)",
+      "elements": [
+        "AR004"
+      ]
+    },
+    {
+      "id": "AR:left_prepatellar_bursa",
+      "name": "left prepatellar bursa (schematic)",
+      "elements": [
+        "AR006"
+      ]
+    },
+    {
+      "id": "AR:patellar_ligament",
+      "name": "patellar ligament (schematic)",
+      "elements": [
+        "AR003",
+        "AR004"
+      ]
+    },
+    {
+      "id": "AR:prepatellar_bursa",
+      "name": "prepatellar bursa (schematic)",
+      "elements": [
+        "AR005",
+        "AR006"
+      ]
+    },
+    {
+      "id": "AR:L4_L5_disk_internal",
+      "name": "L4-L5 disk internal anatomy (schematic)",
+      "elements": [
+        "AR001",
+        "AR002"
+      ]
+    }
+  ],
+  "triangles": 206072
+}

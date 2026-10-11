@@ -1,92 +1,101 @@
 # Anatomy RE
 
-Atlas 3D całego ciała, wersja 0.2: **2234 elementy siatki, 1658 nazwanych pojęć źródłowych, 6 681 030 trójkątów**. Zaimportowano wszystkie siatki BodyParts3D 4.0 IS-A / 99% reduction. Pełny import tego zbioru nie oznacza kompletnego odpowiednika Complete Anatomy ani rekonstrukcji z atlasów i filmu.
-
-![Render rzeczywistych siatek](docs/full-body-preview.png)
+Samodzielny atlas 3D z pełną geometrią Z-Anatomy wyeksportowaną przez Blender oraz opcjonalnym trybem lekkim opartym na BodyParts3D i modelach edukacyjnych. Repozytorium zawiera oba katalogi anatomii i 46 pakietów geometrii. Można je uruchomić bez sąsiednich repozytoriów.
 
 ## Uruchomienie
 
-Rozpakuj całe wydanie ZIP i otwórz `OTWORZ_ATLAS.html` albo `public/index.html`. Wydanie zawiera skompilowany silnik i geometrię. Pakiety są lokalnymi skryptami, co umożliwia uruchomienie bez żądań modułów/modeli przez `file://`; ta ścieżka oczekuje testu interaktywnego. Potrzebna współczesna przeglądarka z WebGL2 i DecompressionStream. Ze względu na wielkość modelu zalecany komputer. Układy są ładowane na żądanie.
+Wymagany jest Node.js 22.13 lub nowszy.
 
-Repozytorium źródłowe: `npm ci`, `npm run build`, następnie otwórz `dist/index.html`. Tryb deweloperski: `npm run dev`. Serwowanie builda: `npm run preview`.
+### Pobranie przez Git
 
-## Zaimplementowane funkcje
-
-- Obrót, zoom, wybór siatki; wyszukiwanie nazw EN, FMA i wybranych polskich haseł.
-- 15 grup geometrii, widoczność i przezroczystość; ustawienia szkieletu, mięśni, narządów, nerwów i naczyń.
-- Izolowanie, ukrywanie, przybliżanie oraz widoki anatomiczne.
-- Przybliżone filtry regionów według granic przestrzennych, bez segmentacji anatomicznej.
-- Płaszczyzna cięcia powierzchni bez wypełnienia; nie symuluje CT/MRI.
-- Lokalny zapis widoku, eksport PNG i widocznych siatek do GLB. Cięcie nie jest utrwalane w eksportowanej geometrii.
-- Źródła, identyfikatory, SHA-256 i status oczekującej weryfikacji anatomii.
-
-## Zakres
-
-| Grupa wyświetlania | Elementy siatki |
-| --- | ---: |
-| Kości, w tym zęby | 232 |
-| Mięśnie | 425 |
-| Tkanki łączne | 95 |
-| Tętnice | 634 |
-| Żyły | 392 |
-| Układ nerwowy | 146 |
-| Układ oddechowy | 104 |
-| Układ pokarmowy | 109 |
-| Serce | 26 |
-| Układ moczowo-płciowy | 18 |
-| Układ hormonalny | 7 |
-| Powłoki | 3 |
-| Narządy zmysłów | 36 |
-| Tkanki limfatyczne | 3 |
-| Niesklasyfikowane | 4 |
-
-To liczby elementów siatki, nie kompletnych narządów czy mięśni. 1954 przypisania do grup wynikają z przynależności w źródle; 276 z reguł nazw wymagających przeglądu; 4 pozostają niesklasyfikowane. Szczegóły: `public/full-catalog.json`, `docs/full-body-coverage.json`.
-
-Model referencyjny dorosłego mężczyzny ma zredukowaną geometrię. Brakuje modelu kobiecego, kompletnej anatomii limfatycznej i części drobnych struktur, zweryfikowanych przyczepów, ruchu/biomechaniki, mikroskopii, AR i badań obrazowych. Nie wykonano przeglądu anatomisty ani walidacji klinicznej. Nie pozyskano geometrii Complete Anatomy. Atlasy i filmy sekcyjne pozostają kandydatami do przeglądu, nie dowodem odtworzenia siatek.
-
-## Modele GLB i odtworzenie danych
-
-Pakiety są zapisane raz w `public/packs/`. `python3 scripts/unpack_models.py` odtwarza 15 samodzielnych plików `models/full-body/*.glb`, około 183 MB. Wszystkie używają wspólnego układu współrzędnych, metrów i osi Y w górę. Importuj je do Blendera bez osobnego centrowania.
+Zainstaluj Git i Node.js (zalecana wersja 24 LTS), a następnie w terminalu
+Windows wykonaj:
 
 ```sh
-python3 -m pip install -r requirements.txt
-python3 scripts/unpack_models.py
-npm run validate:full
-python3 scripts/test_reconstruction.py
-```
-
-Importer źródłowy przyjmuje oficjalne archiwum `isa_BP3D_4.0_obj_99.zip` ze strony [BodyParts3D](https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html):
-
-```sh
-python3 scripts/build_full_body.py /sciezka/isa_BP3D_4.0_obj_99.zip
-npm run validate:full
-npm run build
-```
-
-`docs/VERIFICATION.md` opisuje weryfikację i ograniczenia. Starsze pliki kończyny dolnej pozostają materiałem wersji 0.1; aktualny atlas używa `full-catalog.json`.
-
-## Twój fork REA
-
-`PhysiotoIT/rea` jest submodułem przypiętym do `6e4535c1011f1982e9ab07b7ebcd600c19cd494d`.
-
-```sh
-git submodule update --init --recursive
-cd vendor/rea
+git clone --branch codex/anatomy-atlas https://github.com/PhysiotoIT/anatomy-re.git
+cd anatomy-re
 npm ci
-npm run build:cached
-cd ../..
-npm run build
-npm run rea:inspect
+npm run dev -- --open
 ```
 
-ZIP nie zawiera historii Git ani zawartości submodułu. Po rozpakowaniu pobierz go przez `git clone https://github.com/PhysiotoIT/rea.git vendor/rea`, następnie `git -C vendor/rea checkout 6e4535c1011f1982e9ab07b7ebcd600c19cd494d` i powyższe komendy budowania.
+Przeglądarka otworzy atlas działający na Twoim komputerze. Pozostaw terminal
+otwarty. Repozytorium zawiera oba kompletne zestawy modeli; po instalacji
+zależności atlas nie pobiera anatomii z zewnętrznych serwisów. Pierwsze
+pobranie może potrwać kilka minut ze względu na rozmiar geometrii.
+Włącz wszystkie układy przyciskiem **All**.
 
-REA analizuje oprogramowanie przeglądarki; raport jest w `docs/rea-evidence.json.gz`, podsumowanie w `docs/rea-inspection-summary.json`. Nie rekonstruuje ono powierzchni anatomicznych ani nie sprawdza poprawności anatomii.
+Jeżeli masz już ten klon, pobierz i przełącz gałąź:
 
-[Porównanie z filmem](docs/REFERENCE_ANALYSIS.md) i [proces rekonstrukcji](docs/RECONSTRUCTION.md) opisują pozostały zakres. Triangulacja wymaga skalibrowanych widoków tego samego preparatu i zwraca punkty, nie gotowe siatki.
+```sh
+git fetch origin
+git switch codex/anatomy-atlas
+npm ci
+npm run dev -- --open
+```
 
-## Licencje i publikacja
+Późniejsze aktualizacje na tej gałęzi pobieraj poleceniem `git pull`.
 
-Kod: MIT. BodyParts3D: CC BY 4.0; źródła i modyfikacje w [NOTICE.md](NOTICE.md). Nie zawarto ilustracji atlasów ani klatek filmowych.
+### Sprawdzenie i budowanie
 
-Docelowe osobne repozytorium: `PhysiotoIT/anatomy-re`. Wersja 0.2 przygotowana lokalnie. Utworzenie i publikacja repozytorium zdalnego nie zostały potwierdzone.
+```sh
+npm ci
+npm run validate:atlas
+npm run validate:source
+npm run validate:tours
+npm run check
+npm run dev
+```
+
+Serwer deweloperski uruchamia się pod `http://localhost:3016/`. Do zbudowania wersji statycznej użyj `npm run build`; pliki wynikowe pojawią się w `dist/`. Można je serwować poleceniem `npm run preview`. Przeglądarka potrzebuje WebGL; `DecompressionStream` przyspiesza pobieranie skompresowanych modeli.
+
+`localhost` zawsze oznacza komputer, na którym otwarto przeglądarkę. Serwer
+uruchomiony w środowisku chmurowym nie jest dostępny pod tym adresem na
+komputerze użytkownika. To środowisko nie udostępnia publicznego podglądu.
+
+### Gotowa paczka dla Windows
+
+Archiwum `outputs/anatomy-re-windows.zip` zawiera zbudowaną aplikację,
+wszystkie modele i oficjalny przenośny Node.js dla Windows 10/11 x64.
+Rozpakuj **całe archiwum**, wejdź do folderu `anatomy-re` i otwórz
+`Uruchom-atlas.cmd`. Przeglądarka otworzy atlas po uruchomieniu serwera.
+Pozostaw okno terminala otwarte. Nie jest potrzebna instalacja Node.js,
+`npm` ani połączenie z Internetem. Wszystkie układy włącz przyciskiem **All**.
+
+`scripts/package-windows.py` tworzy tę paczkę z `dist/` oraz oficjalnego
+`node.exe`, którego SHA-256 musi odpowiadać plikowi `SHASUMS256.txt` tej samej
+wersji z nodejs.org. `scripts/portable-server.mjs` udostępnia wyłącznie katalog
+aplikacji na `127.0.0.1`; modele są przechowywane raz, w gzip. Paczka i jej
+SHA-256 są generowanymi plikami, pomijanymi w Git.
+
+## Obecny zakres
+
+- Domyślny tryb „Pełna geometria”: 2913 modeli Z-Anatomy, 8 198 244 trójkąty i 5373 pojęcia katalogu. Oryginalna topologia jest zachowana bez dodatkowego uproszczenia. „Tryb lekki” przywraca dotychczasowy katalog. Zbiory są rozdzielone, ponieważ mają inne położenie i podział struktur.
+- Pełny projekt Blendera zawiera 5249 edytowalnych obiektów anatomii w dwóch widokach: pełne źródło i wszystkie dotychczasowe modele. [Opis projektu i odtwarzanie](docs/blender-source-quality.md).
+- Tryb lekki: 2234 siatki z BodyParts3D, 96 dodatkowych siatek Z-Anatomy oraz 6 autorskich modeli edukacyjnych: pierścień i jądro krążka L4–L5, obustronne więzadła rzepki i kaletki przedrzepkowe. Katalog zawiera 3598 pojęć i 2 612 284 trójkąty w 17 pakietach. Sześć modeli Blendera ma łącznie 206 072 trójkąty, w tym poglądowe warstwy pierścienia i podłużne bruzdy więzadeł.
+- Obracanie i przybliżanie modelu, wybór struktury, wyszukiwanie po nazwie i identyfikatorze, izolowanie wybranej struktury oraz przełączanie widoczności układów.
+- W panelu wybranej struktury suwak „Wygaszenie otoczenia” płynnie osłabia pozostałe widoczne tkanki, pozostawiając wskazaną strukturę pełną i podświetloną.
+- Oryginalne identyfikatory źródłowe i krótkie opisy edukacyjne w panelu struktur.
+- Tryb nauki z pięcioma prowadzonymi trasami (krążenie, układ nerwowy, mechanika i stabilność kolana oraz budowa krążka L4–L5): każda prowadzi kamerę do kolejnych struktur, dobiera warstwy i pokazuje etykietę przy modelu. Po trasie dostępny jest krótki quiz z wynikiem.
+- W każdej trasie jest spis struktur do szybkiego przejścia między tematami oraz tryb zapamiętywania: ukrywa nazwę i opis bieżącej struktury do chwili kliknięcia „Pokaż nazwę i opis”.
+- Przekrój modelu płaszczyzną strzałkową, czołową lub poprzeczną, z regulacją jej położenia. Płaszczyzna ucina widoczne powierzchnie, ale nie wypełnia przeciętych siatek i nie reprezentuje obrazu CT ani MRI.
+- Przełącznik „Modele edukacyjne” udostępnia sześć uzupełnień z Blendera. Są oznaczone jako uproszczone i bez przeglądu anatomisty. Wyszukiwarka rozpoznaje ich polskie nazwy, a widok z góry pozwala obejrzeć budowę krążka. Lekcje automatycznie przygaszają i ograniczają otaczający kontekst.
+
+W pełnym trybie dostępne są również dwie lekcje źródłowe: krążek L4–L5 oraz torebka i kaletki kolana. Lekcje z dotychczasowego atlasu pojawiają się, gdy wszystkie ich pojęcia mają jednoznaczne odpowiedniki w nowym katalogu.
+
+Raport luk i analiza ilustracji: [`docs/atlas-gaps.md`](docs/atlas-gaps.md). Edytowalny projekt: [`modeling/atlas-additions.blend`](modeling/atlas-additions.blend). Skrypt [`modeling/build_additions.py`](modeling/build_additions.py) odtwarza modele w Blenderze, a `node scripts/import-blender-models.mjs` aktualizuje katalog bez dublowania siatek. Ilustracje OpenStax 1e i ich licencja są zachowane w `references/openstax/`.
+
+Trasy są zapisane w `app/study-tours.json`. `npm run validate:tours` sprawdza, czy ich pojęcia i układy rzeczywiście istnieją w katalogu oraz czy wskazane struktury są widoczne po włączeniu wybranych warstw. Opisy są edukacyjne i nie zastępują zweryfikowanej treści klinicznej.
+
+## Wzorzec nauki i inspiracja Kenhub
+
+Użytkownik wskazał Kenhub jako punkt odniesienia. Przełożyliśmy na atlas 3D sekwencję: wybór tematu → oglądanie oznaczonej struktury w kontekście → samodzielne przypomnienie nazwy → quiz identyfikacyjny z wynikiem. Spis struktur pozwala wrócić do wybranego elementu lekcji. To własna implementacja oparta na ogólnym wzorcu nauki anatomii, nie kopia materiałów ani interfejsu Kenhub. Próba bezpośredniego odczytu serwisu i jego filmów w tym środowisku zwróciła HTTP 403, więc bieżących ekranów Kenhub nie mogliśmy zweryfikować. Do dokładnego porównania konkretnej prezentacji potrzebny będzie dostępny film lub zrzuty ekranu.
+
+Jako drugi punkt odniesienia użytkownik podał 3D4Medical. Dodałem kontrolę wygaszania kontekstu do pracy z wybraną strukturą w modelu 3D. To autorska funkcja atlasu, nie odtworzenie konkretnego ekranu 3D4Medical: próby odczytu `3d4medical.com` przez proxy także otrzymują HTTP 403, a bez proxy domena nie jest osiągalna. Dokładne porównanie widoków i zachowań wymaga dostępnego nagrania lub zrzutów.
+
+To referencyjna anatomia dorosłego mężczyzny. Dane nie przedstawiają wszystkich struktur ani wariantów anatomicznych. Atlas nie służy do diagnostyki lub planowania zabiegów. Blender eksportuje pełną geometrię do pakietów aplikacji. Nie ma eksportu GLB ani rekonstrukcji z filmów. Opis tych funkcji znajdował się w poprzednim README, ale ich kod i dane nie były obecne w historii tego repozytorium.
+
+## Źródło i licencje
+
+Kod aplikacji pochodzi z repozytorium `PhysiotoIT/human-atlas` i jest udostępniany na licencji MIT (patrz `LICENSE`). Oryginalne modele i metadane BodyParts3D 4.0 są objęte CC BY 4.0; dodatkowe, przetworzone modele Z-Anatomy są objęte CC BY-SA 4.0. Autorskie modele z Blendera i wykorzystane ilustracje OpenStax 1e są objęte CC BY 4.0. Szczegóły pochodzenia, przekształceń i warunków udostępniania znajdują się w [`public/ATTRIBUTION.md`](public/ATTRIBUTION.md). Weryfikację liczby siatek, pojęć, trójkątów, zamknięcia nowych powierzchni i spójności buforów uruchamia `npm run validate:atlas`.
+
+Pełne modele Z-Anatomy, ich metadane, renderowane podglądy i złożony projekt Blendera: CC BY-SA 4.0. Oryginalna licencja: `references/zanatomy/LICENSE.txt`. Rozdzielczość źródłowych siatek jest nierówna; większa liczba trójkątów nie oznacza zatwierdzenia poprawności anatomii.
