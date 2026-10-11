@@ -12,6 +12,7 @@
     "dev": "vite --host 0.0.0.0 --port 3016",
     "preview": "vite preview --host 0.0.0.0 --port 3016",
     "build": "vite build",
+    "build:pages": "vite build --base=/anatomy-re/",
     "build:vercel": "vite build",
     "check": "tsc --noEmit"
   },

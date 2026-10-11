@@ -2,7 +2,27 @@
 
 Samodzielny atlas 3D z pełną geometrią Z-Anatomy wyeksportowaną przez Blender oraz opcjonalnym trybem lekkim opartym na BodyParts3D i modelach edukacyjnych. Repozytorium zawiera oba katalogi anatomii i 46 pakietów geometrii. Można je uruchomić bez sąsiednich repozytoriów.
 
-## Uruchomienie
+## Otwieranie w przeglądarce przez GitHub Pages
+
+Gotowa strona wraz z modelami jest publikowana na gałęzi `gh-pages`.
+Właściciel repozytorium włącza ją jednorazowo w
+[Settings → Pages](https://github.com/PhysiotoIT/anatomy-re/settings/pages):
+
+1. **Source:** `Deploy from a branch`.
+2. **Branch:** `gh-pages`; folder: `/ (root)`.
+3. Kliknij **Save** i poczekaj, aż GitHub zakończy publikację.
+
+Po publikacji adres atlasu to `https://physiotoit.github.io/anatomy-re/`.
+Odwiedzający nie potrzebuje Git, Node.js ani terminala. Pierwsze otwarcie
+pobiera modele, więc wymaga połączenia z Internetem. Przycisk **All**
+włącza wszystkie układy; **Tryb lekki** zmniejsza ilość ładowanej geometrii.
+
+Do aktualizacji gotowej strony służy `bash scripts/publish-pages.sh`.
+Skrypt buduje atlas z prefiksem `/anatomy-re/`, zapisuje stronę na gałęzi
+`gh-pages` i wysyła ją bez zmiany głównego katalogu roboczego oraz bez
+wymuszania nadpisania historii. Wymaga Node.js, Git oraz prawa do push.
+
+## Uruchomienie na swoim komputerze
 
 Wymagany jest Node.js 22.13 lub nowszy.
 
